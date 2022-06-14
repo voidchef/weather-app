@@ -1,3 +1,5 @@
+import { webAppStart } from "./index";
+
 const search = (() => {
   const searchBar = document.querySelector(".searchBar");
   const searchBtn = document.querySelector(".searchBtn");
@@ -6,6 +8,7 @@ const search = (() => {
   searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
     input = searchBar.value;
+    webAppStart.start();
   });
 
   const getInput = () => {

@@ -1,3 +1,5 @@
+import { webAppStart } from "./index";
+
 const unitChange = (() => {
   const unitBtn = document.querySelector(".unitBtn");
   let unit = "celsius";
@@ -13,6 +15,7 @@ const unitChange = (() => {
       scale = "metric";
       unitBtn.innerHTML = "<b>°C</b>/°F";
     }
+    webAppStart.start();
   });
 
   const getUnit = () => {
