@@ -1,4 +1,4 @@
-import { webAppStart } from "./index";
+import { webAppStart } from "../index";
 
 const unitChange = (() => {
   const unitBtn = document.querySelector(".unitBtn");

@@ -1,7 +1,7 @@
-import "./main.css";
+import "./styles/style.css";
 
-import { weather } from "./weather";
-import { render } from "./render";
+import { weather } from "./components/weather";
+import { render } from "./components/render";
 
 const webAppStart = (() => {
   const start = async () => {
