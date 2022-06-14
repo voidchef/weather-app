@@ -8,7 +8,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.header {
+header {
   display: flex;
   justify-content: center;
   align-items: center;
