@@ -43,9 +43,17 @@ const helper = (() => {
     return `${hour}:${minute} ${amOrPm}`;
   };
 
+  const getIcon = (name) => {
+    let code = name.split(" ", 2);
+    let meridian = name.split(2, " ");
+
+    return `http://openweathermap.org/img/wn/${code}${meridian}@2x.png`;
+  };
+
   return {
     removeAllChildNodes,
     formatTime,
+    getIcon,
   };
 })();
 
