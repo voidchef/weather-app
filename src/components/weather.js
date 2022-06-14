@@ -1,3 +1,5 @@
+import { search } from "./search";
+
 const weather = (() => {
   const apiKey = "";
 
@@ -5,6 +7,7 @@ const weather = (() => {
   let lat;
 
   const getPos = async () => {
+    const city = search.getInput();
     const response = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`,
       { mode: "cors" }
