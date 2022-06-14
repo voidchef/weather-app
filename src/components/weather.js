@@ -2,7 +2,7 @@ import { search } from "./search";
 import { unitChange } from "./unitChange";
 
 const weather = (() => {
-  const apiKey = "";
+  const apiKey = process.env.API_KEY;
 
   let lon;
   let lat;
