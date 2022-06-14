@@ -13,4 +13,25 @@ const weather = (() => {
     lon = data.coord.lon;
     lat = data.coord.lat;
   };
+
+  let data;
+  const getWeather = async () => {
+    await getPos();
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${scale}&appid=${apiKey}`,
+      { mode: "cors" }
+    );
+    data = await response.json();
+  };
+
+  const getData = () => {
+    return data;
+  };
+
+  return {
+    getWeather,
+    getData,
+  };
 })();
+
+export { weather };
