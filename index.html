@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Weather App</title>
+  <script defer src="bundle.js"></script><link href="main.css" rel="stylesheet"></head>
+
+  <body>
+    <div id="content">
+      <header>
+        <div class="nav">
+          <div class="cell">
+            <img
+              src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
+              class="logo"
+            />
+          </div>
+
+          <div class="cell">
+            <form class="search">
+              <input
+                type="text"
+                placeholder="Enter a City"
+                class="searchBar"
+                required
+              />
+              <button type="button" class="searchBtn">Search</button>
+            </form>
+          </div>
+
+          <div class="cell">
+            <button type="button" class="unitBtn"><b>°C</b>/°F</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="weatherBox">
+        <div class="box ContainerOne">
+          <div class="current boxOne">
+            <div class="row location"></div>
+            <div class="row weatherDesc"></div>
+            <div class="row temp"></div>
+            <div class="row highLow"></div>
+          </div>
+        </div>
+
+        <div class="box ContainerTwo">
+          <div class="boxTwo">
+            <div class="twentyFour"></div>
+          </div>
+
+          <div class="box boxThree">
+            <div class="description"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weatherInfo">
+        <div class="info"></div>
+      </div>
+
+      <div class="dailyWeather">
+        <div class="daily">
+          <div class="dailyHeader dailyBlock">
+            <div class="dailyTitle dailyCell">DAY</div>
+            <div class="dailyTitle dailyCell"></div>
+            <div class="dailyTitle dailyCell">CHANCE OF RAIN</div>
+            <div class="dailyTitle dailyCell">HUMIDITY</div>
+            <div class="dailyTitle dailyCell">TEMPERATURE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
