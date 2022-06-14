@@ -54,10 +54,23 @@ const render = (() => {
     }
   };
 
+  const description = () => {
+    const description = document.querySelector(".description");
+
+    description.innerHTML = `Today: broken ${
+      data.current.weather[0].description
+    }. The high will be ${
+      data.daily[0].temp.min
+    }° ${unitChange.getUnit()}. The low tonight will be ${
+      data.daily[0].temp.max
+    }° ${unitChange.getUnit()}.`;
+  };
+
   const renderPage = () => {
     data = weather.getData();
     current();
-    twentyFour()
+    twentyFour();
+    description();
   };
 
   return {
