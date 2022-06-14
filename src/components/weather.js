@@ -1,4 +1,5 @@
 import { search } from "./search";
+import { unitChange } from "./unitChange";
 
 const weather = (() => {
   const apiKey = "";
@@ -19,6 +20,7 @@ const weather = (() => {
 
   let data;
   const getWeather = async () => {
+    const scale = unitChange.getScale();
     await getPos();
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${scale}&appid=${apiKey}`,
