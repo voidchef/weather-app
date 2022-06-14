@@ -66,11 +66,101 @@ const render = (() => {
     }° ${unitChange.getUnit()}.`;
   };
 
+  const weatherInfo = () => {
+    const container = document.querySelector(".info");
+    const requiredData = [
+      "sunrise",
+      "sunset",
+      "feels_like",
+      "pressure",
+      "humidity",
+      "clouds",
+      "uvi",
+      "visibility",
+      "wind_speed",
+      "pop",
+    ];
+
+    helper.removeAllChildNodes(container);
+
+    for (const prop of requiredData) {
+      const infoCell = document.createElement("div");
+      infoCell.classList.add("infoCell");
+      const small = document.createElement("small");
+      small.classList.add("small");
+      const value = document.createElement("div");
+      value.classList.add("value");
+
+      if (prop == "sunrise") {
+        small.innerHTML = prop.toUpperCase();
+        value.innerHTML = helper.formatTime(
+          data.current[prop],
+          data.timezone_offset,
+          "full"
+        );
+      }
+
+      if (prop == "sunset") {
+        small.innerHTML = prop.toUpperCase();
+        value.innerHTML = helper.formatTime(
+          data.current[prop],
+          data.timezone_offset,
+          "full"
+        );
+      }
+
+      if (prop == "feels_like") {
+        small.innerHTML = "FEELS LIKE";
+        value.innerHTML = `${data.current[prop]}° ${unitChange.getUnit()}`;
+      }
+
+      if (prop == "pressure") {
+        small.innerHTML = prop.toUpperCase();
+        value.innerHTML = `${data.current[prop]} hPa`;
+      }
+
+      if (prop == "humidity") {
+        small.innerHTML = prop.toUpperCase();
+        value.innerHTML = data.current[prop];
+      }
+
+      if (prop == "clouds") {
+        small.innerHTML = prop.toUpperCase();
+        value.innerHTML = data.current[prop];
+      }
+
+      if (prop == "uvi") {
+        small.innerHTML = "UV INDEX";
+        value.innerHTML = data.current[prop];
+      }
+
+      if (prop == "visibility") {
+        small.innerHTML = prop.toUpperCase();
+        value.innerHTML = `${data.current[prop]} km`;
+      }
+
+      if (prop == "wind_speed") {
+        small.innerHTML = "WIND";
+        value.innerHTML = `${data.current[prop]} km/hr`;
+      }
+
+      if (prop == "pop") {
+        small.innerHTML = "CHANCE OF RAIN";
+        value.innerHTML = `${data.hourly[0].pop * 100}%`;
+      }
+
+      infoCell.appendChild(small);
+      infoCell.appendChild(value);
+      container.appendChild(infoCell);
+    }
+  };
+
   const renderPage = () => {
     data = weather.getData();
     current();
     twentyFour();
     description();
+    weatherInfo();
   };
 
   return {

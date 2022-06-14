@@ -142,3 +142,30 @@ header {
 .description {
   text-align: center;
 }
+
+.info {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  height: 80%;
+  width: 80%;
+  color: white;
+  text-align: center;
+}
+
+.infoCell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.small {
+  color: #6c757d;
+  font-size: 1em;
+}
+
+.value {
+  color: white;
+  font-size: 1.2em;
+}
