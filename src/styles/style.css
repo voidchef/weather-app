@@ -8,7 +8,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,6 +143,14 @@ header {
   text-align: center;
 }
 
+.weatherInfo {
+  display: flex;
+  height: 32vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #343a40;
+}
+
 .info {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -168,4 +176,32 @@ header {
 .value {
   color: white;
   font-size: 1.2em;
+}
+
+.dailyWeather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.daily {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  width: 75%;
+  margin-top: 6vh;
+  margin-bottom: 9vh;
+}
+
+.dailyBlock {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid #343a40;
+}
+
+.dailyCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -155,12 +155,65 @@ const render = (() => {
     }
   };
 
+  const dailyWeather = () => {
+    const container = document.querySelector(".daily");
+    const dailyHeader = document.querySelector(".dailyHeader");
+
+    dailyHeader.remove();
+    helper.removeAllChildNodes(container);
+    container.appendChild(dailyHeader);
+
+    for (const day in data.daily) {
+      const unix_time = data.daily[day].dt;
+      const offset = data.timezone_offset;
+      const icon = data.daily[day].weather[0].icon;
+      const pop = data.daily[day].pop;
+      const humidity = data.daily[day].humidity;
+      const tempHigh = data.daily[day].temp.max;
+      const tempLow = data.daily[day].temp.min;
+
+      const dailyBlock = document.createElement("div");
+      dailyBlock.classList.add("dailyBlock");
+      dailyBlock.style.display = "grid";
+      dailyBlock.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr";
+      dailyBlock.style.borderBottom = "1px solid #343a40";
+
+      const dayCell = document.createElement("div");
+      dayCell.classList.add("dailyCell");
+      dayCell.innerHTML = helper.formatDate(unix_time, offset, "day");
+
+      const iconCell = document.createElement("div");
+      iconCell.classList.add("dailyCell");
+      iconCell.innerHTML = `<img src=${helper.getIcon(icon)}>`;
+
+      const popCell = document.createElement("div");
+      popCell.classList.add("dailyCell");
+      popCell.innerHTML = `${pop}%`;
+
+      const humidityCell = document.createElement("div");
+      humidityCell.classList.add("dailyCell");
+      humidityCell.innerHTML = `${humidity}%`;
+
+      const tempCell = document.createElement("div");
+      tempCell.classList.add("dailyCell");
+      tempCell.innerHTML = `${tempHigh}° ${tempLow}°`;
+
+      container.appendChild(dailyBlock);
+      dailyBlock.appendChild(dayCell);
+      dailyBlock.appendChild(iconCell);
+      dailyBlock.appendChild(popCell);
+      dailyBlock.appendChild(humidityCell);
+      dailyBlock.appendChild(tempCell);
+    }
+  };
+
   const renderPage = () => {
     data = weather.getData();
     current();
     twentyFour();
     description();
     weatherInfo();
+    dailyWeather();
   };
 
   return {
