@@ -10,7 +10,7 @@ const weather = (() => {
   const getPos = async () => {
     const city = search.getInput();
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`,
       { mode: "cors" }
     );
     const data = await response.json();
