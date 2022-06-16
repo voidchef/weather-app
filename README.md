@@ -6,6 +6,8 @@ Project to create a Weather App
 
 [Weather App](https://voidchef.github.io/weather-app/)
 
+![weather-app](https://user-images.githubusercontent.com/79092620/173995649-dbc16d35-c575-4035-b83e-2f5195f6d8d6.png)
+
 **Note:** This Website works best with High Resolution Screens (1080p and up). Check the [improvements section](#improvements) for future updates.
 
 ## Features
@@ -77,7 +79,7 @@ You will need `Node.js` and `npm` installed globally on your machine.
 1. Get a free API key at [https://openweathermap.com](https://openweathermap.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/Artis-Dev/weather-app.git
+   git clone https://github.com/voidchef/weather-app.git
    ```
 3. Install NPM packages
    ```sh
